@@ -1,0 +1,43 @@
+master : Lo que esta en produccion. Ya esta testeado y no tiene bugs.
+
+dev : Es una copia de master y algo mas. Ese algo mas probablemente sea un branch mergeado. 
+
+css - js - db - server : Estos sopn branches especificos por area de trabajo
+
+branches por funcionalidades : salen desde cada branh de area 
+
+
+
+GITFLOW : Es un framework de organizacion de branches 
+
+https://danielkummer.github.io/git-flow-cheatsheet/index.es_ES.html
+
+feature : nuevas funcionalidades . Sale de dev y mergea en dev
+bugfix : es un bug de desarrollo . Sale de dev y mergea en dev
+hotfix : es un bug de produccion . Sale de master y se mergea a master y dev. 
+release : es una copia segura de dev que sale de dev y mergea en master y dev y crea un tag. 
+
+
+
+STASH : Es un espacio de almacenamiento temporal para modificaciones que no fueron commiteadas todavia. Suele ser util cuando quiero cambiar de branch pero tengo modificaciones sin commitear (no puedo hacer checkout si no tengo el status limpio). 
+
+git stash : Crea un nuevo entry en la lista de stash
+git stash list : muestra el listado de entries
+git stash apply [<stash_id>] : Reaplica el ultimo entry del listado o alternativamente podemos pasarle el ID de un stash para aplicar
+git stash pop [<stash_id>] : Reaplica el ultimo entry del listado o alternativamente podemos pasarle el ID de un stash para aplicar Y lo borra del stash
+git stash clear : borra todo el stash
+
+
+
+
+TAG : Son un tipo de objeto de la base de datos de GIT (anotados) . Tecnicamente hay dos tipos de tags : anotados y no anotados. Los no anotados no generan espacio, osea que son mas ligeros PERO no permiten comentarios . Los anotados generan un objeto en la DB de GIT y permiten dejar comentarios. 
+
+git tag [-a] <nombre_tag> [-m <subject>] : Genera un tag. Si se usa el falg -a , el tag es anotado. 
+
+
+FORKS y PULL REQUEST : 
+
+Un fork es un clon de un repositorio que no nos pertenece a nosotros pero que se crea en nuestra propia cuenta. 
+
+
+github.com/HoracioGutierrez
